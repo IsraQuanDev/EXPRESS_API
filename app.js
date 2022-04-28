@@ -1,33 +1,22 @@
+//Usando objeto express
 const express = require('express')
+
+// App de Express
 const app = express()
+app.use(express.json()) // Indicamos que usaremos JSON
+
+// Puerto en que vamos a ver nuestra app: localhost:3000
 const port = 3000 // localhost:3000
 
 
-//localhost: 3000
-app.get('/',(req,res)=> {
-    res.send("Hola a todos mis explorers")
-})
-
-app.get('/launchx',(req,res)=> {
-    res.send("Bienvenidos a LaunchX")
-})
-
-app.get('/node',(req,res)=> {
-    const explorer1 = {id: 1, name: "Explorer1"}
-    const explorer2 = {id: 2, name: "Explorer2"}
-    const explorer3 = {id: 3, name: "Explorer3"}
-    res.send([explorer1,explorer2,explorer3])
-})
-
-// localhost/explorers/carlogilmar
-app.get('/explorers/:explorer',(req,res)=> {
-    console.log(req.params) 
-    res.send(req.params)
-})
-
-
-
-//app.get('/url...')
+//Con esto inicializamos esta app
 app.listen(port,()=>{
-    console.log("Server Listo!")
+    console.log(`Example app listenning on port ${port}`)
 })
+
+ 
+ 
+ 
+
+
+ 
